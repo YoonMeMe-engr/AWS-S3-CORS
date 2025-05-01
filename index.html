@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewellery Website</title>
+    <link rel="icon" href="./video/logo.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-img {
+            width: 100%;
+        }
+
+        .head {
+            position: absolute;
+            color: white;
+            font-size: 5rem;
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+
+        .banner-container {
+            position: absolute;
+            color: white;
+            font-size: 2.5rem;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+        }
+
+        .banner {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="main-img" src="https://loevjewelry.com/cdn/shop/files/20240703_LOEV_0005_PhotoBy_Studio-Siebrecht_Kopie_f7cfa1c3-e918-4b75-89f0-851c7b01df64.jpg?v=1720701468&width=1500" alt="">
+        <h1 class="head">Jewellery Choices</h1>
+        <div class="banner-container">
+            <div class="banner">
+                <span>Sustainable</span>
+                <span>Diamonds</span>
+            </div>
+        </div>
+    </div>
+    <div class="tofetch"></div>
+    <script>
+        const tofetch = document.querySelector(".tofetch");
+        fetch('http://jewellery-menu.s3-website-us-east-1.amazonaws.com/fetch-page.html')
+        .then((response) => {
+            return response.text();
+        })
+        .then((html) => {
+            tofetch.innerHTML = html;
+        });
+    </script>
+</body>
+</html>
